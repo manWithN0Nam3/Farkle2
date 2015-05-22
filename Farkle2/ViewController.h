@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DieLabel.h"
 
 @interface ViewController : UIViewController
 

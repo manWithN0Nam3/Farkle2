@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import <iAd/iAd.h>
 
-@interface ViewController ()
-
+@interface ViewController ()<DieLabelDelegate,ADBannerViewDelegate>
+@property (strong, nonatomic) IBOutletCollection(DieLabel) NSArray *labels;
+@property NSMutableArray *dice;
+@property (weak, nonatomic) IBOutlet ADBannerView *iad;
 @end
 
 @implementation ViewController
@@ -17,11 +20,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    for (DieLabel *label in self.labels) {
+        label.delegate = self;
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)onRollTapped:(UIButton *)sender {
+
+    for (DieLabel* label in self.labels) {
+        NSLog(@"%@",label);
+        [label roll];
+    }
+}
+
+#pragma mark delegate method
+
+-(void)onDieLabbelTapped:(UILabel *)label{
+    self.dice = [[NSMutableArray alloc]initWithObjects:label, nil];
+
+    for (UILabel*label in self.dice) {
+        label.backgroundColor = [UIColor redColor];
+    }
+
+    if (label.backgroundColor ==[UIColor redColor]) {
+
+    }
+    else{
+
+
+    }
+
+}
+
+#pragma mark iAds
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    self.iad.alpha = 1;
+
+
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    self.iad.alpha = 0;
 }
 
 @end

@@ -23,6 +23,7 @@
 
     for (DieLabel *label in self.labels) {
         label.delegate = self;
+        label.backgroundColor = [UIColor yellowColor];
     }
 }
 
@@ -31,28 +32,26 @@
 - (IBAction)onRollTapped:(UIButton *)sender {
 
     for (DieLabel* label in self.labels) {
-        NSLog(@"%@",label);
+
+        if (label.backgroundColor == [UIColor redColor]) {
+
+        }
+        else{
         [label roll];
+            }
     }
 }
 
 #pragma mark delegate method
 
 -(void)onDieLabbelTapped:(UILabel *)label{
-    self.dice = [[NSMutableArray alloc]initWithObjects:label, nil];
 
-    for (UILabel*label in self.dice) {
-        label.backgroundColor = [UIColor redColor];
-    }
+    label.backgroundColor = [UIColor redColor];
+}
 
-    if (label.backgroundColor ==[UIColor redColor]) {
+-(void)onDieLabbelTappedDouble:(UILabel *)label{
 
-    }
-    else{
-
-
-    }
-
+    label.backgroundColor = [UIColor yellowColor];
 }
 
 #pragma mark iAds

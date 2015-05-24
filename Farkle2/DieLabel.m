@@ -15,8 +15,11 @@
     self = [super initWithCoder:aDecoder];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tappedLabel)];
-
     [self addGestureRecognizer:tapGesture];
+
+    UITapGestureRecognizer *tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTappedLabel)];
+    tapGesture2.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:tapGesture2];
     return self;
 
 }
@@ -31,6 +34,18 @@
 
     [self.delegate onDieLabbelTapped:self];
 
+}
+
+
+
+-(void)doubleTappedLabel{
+
+
+
+    NSLog(@"hello");
+
+    [self.delegate onDieLabbelTappedDouble:self];
+    
 }
 
 

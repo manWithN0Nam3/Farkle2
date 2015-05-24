@@ -12,6 +12,8 @@
 @protocol DieLabelDelegate <NSObject>
 
 -(void)onDieLabbelTapped:(UILabel*)label;
+-(void)onDieLabbelTappedDouble:(UILabel*)label;
+
 
 @end
 

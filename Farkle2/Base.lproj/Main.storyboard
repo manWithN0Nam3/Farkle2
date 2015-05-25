@@ -17,20 +17,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiJ-1f-M2J">
-                                <rect key="frame" x="137" y="391" width="30" height="30"/>
+                                <rect key="frame" x="50" y="387" width="83" height="46"/>
+                                <color key="backgroundColor" red="0.37549500363179378" green="0.82051392649104815" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="roll">
+                                    <color key="titleColor" red="0.97586263824300268" green="1" blue="0.96624086141938959" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onRollTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AyQ-wS-0zZ"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXc-5L-ulS">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="RZc-FV-RsL"/>
-                                </connections>
-                            </adBannerView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsO-sY-g32" customClass="DieLabel">
                                 <rect key="frame" x="50" y="167" width="64" height="40"/>
                                 <color key="backgroundColor" red="0.95838797895239214" green="0.70934601601201042" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,18 +69,43 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXc-5L-ulS">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="RZc-FV-RsL"/>
+                                </connections>
+                            </adBannerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqK-zY-Vn5">
+                                <rect key="frame" x="50" y="52" width="83" height="43"/>
+                                <color key="backgroundColor" red="1" green="0.87736420903685586" blue="0.49613528807242979" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCL-iN-nPp">
+                                <rect key="frame" x="207" y="369" width="64" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.46280401244282532" blue="0.34113609083125251" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="bankIt">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBankItButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZwL-8z-Q5Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <connections>
+                        <outlet property="bankItButton" destination="GCL-iN-nPp" id="5JP-bQ-0tn"/>
                         <outlet property="iad" destination="zXc-5L-ulS" id="pC6-uv-Cps"/>
-                        <outletCollection property="labels" destination="nsO-sY-g32" id="Ibv-fM-WEH"/>
-                        <outletCollection property="labels" destination="Swq-0c-Gza" id="Zty-Qj-BWp"/>
-                        <outletCollection property="labels" destination="3lE-dY-mil" id="NkS-gU-wbX"/>
-                        <outletCollection property="labels" destination="Xd2-LR-fKA" id="VrT-H6-Rce"/>
-                        <outletCollection property="labels" destination="MGq-X0-W5v" id="235-yY-gNh"/>
-                        <outletCollection property="labels" destination="ItF-Ra-ill" id="tH6-9y-yae"/>
+                        <outlet property="label1" destination="nsO-sY-g32" id="8Vb-R1-THW"/>
+                        <outlet property="label2" destination="Swq-0c-Gza" id="ldo-jA-P5q"/>
+                        <outlet property="label3" destination="3lE-dY-mil" id="hdd-iY-c3G"/>
+                        <outlet property="label4" destination="Xd2-LR-fKA" id="nqW-fC-Ubk"/>
+                        <outlet property="label5" destination="MGq-X0-W5v" id="8dU-f5-hkJ"/>
+                        <outlet property="label6" destination="ItF-Ra-ill" id="nIr-0c-Gdn"/>
+                        <outlet property="scoreLabel" destination="aqK-zY-Vn5" id="VEO-yX-fY1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
